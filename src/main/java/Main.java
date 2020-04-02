@@ -1,6 +1,11 @@
+import core.Engine;
 
 public class Main {
-    public static void main(String args[]){
-        MinceMeat.lol();
+
+    public static void main(String args[]) {
+        Engine engine = new Engine();
+        engine.preInit();
+        engine.init();
+        engine.run();
     }
 }

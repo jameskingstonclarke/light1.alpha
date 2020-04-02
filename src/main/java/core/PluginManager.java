@@ -1,10 +1,11 @@
 package core;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class PluginManager {
     /**
      * The currently loaded plugins
      */
-    private HashMap<String, Object> loadedPlugins;
+    private ArrayList<Plugin> plugins;
+
 }

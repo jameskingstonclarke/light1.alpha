@@ -1,4 +1,6 @@
 package api.artifact;
 
-public class Artifact {
+public abstract class Artifact {
+
+
 }

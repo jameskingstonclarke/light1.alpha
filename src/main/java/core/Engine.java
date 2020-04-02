@@ -8,6 +8,12 @@ public class Engine {
     private boolean running;
 
 
+    private EventManager eventManager;
+
+    public Engine(){
+        this.eventManager = new EventManager();
+    }
+
     /**
      * Load all plugins dynamically and setups engine
      */
@@ -28,7 +34,8 @@ public class Engine {
     public void run() {
         running = true;
         while (running) {
-
+            this.eventManager.flush();
+            running=false;
         }
     }
 

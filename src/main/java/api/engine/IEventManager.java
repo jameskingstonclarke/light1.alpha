@@ -1,6 +1,7 @@
 package api.engine;
 
 import api.event.Event;
+import api.event.EventBus;
 
 public interface IEventManager {
 
@@ -16,7 +17,7 @@ public interface IEventManager {
      */
     void registerListener(Class clss);
 
-    void pluginEvent(Event.PluginEvent event);
-    void enviromentEvent(Event.EnviromentEvent event);
-    void artifactEvent(Event.ArtifactEvent event);
+    void registerBus(EventBus eventBus);
+
+    void event(Event event);
 }

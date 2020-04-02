@@ -3,17 +3,21 @@ package core;
 import api.artifact.Artifact;
 import api.engine.IRegistryManager;
 
-import java.rmi.registry.Registry;
 import java.util.HashMap;
 
 public class RegistryManager implements IRegistryManager {
 
-    private HashMap<String, api.engine.Registry> registryMap;
+    private HashMap<String, Registry> registries;
 
     public RegistryManager(){
-        this.registryMap = new HashMap<>();
+        this.registries = new HashMap<>();
     }
 
-    public void addRegistry(Registry registry){}
-    public void registerArtifact(Artifact artifact){}
+    public void addRegistry(String enviromentID){
+        this.registries.put(enviromentID, new Registry(enviromentID));
+    }
+
+    public void registerArtifact(String enviromentID, Artifact artifact){
+        this.registries.get(enviromentID).register(artifact);
+    }
 }
